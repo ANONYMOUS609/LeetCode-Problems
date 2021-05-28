@@ -1,0 +1,30 @@
+class Solution {
+    public int[] decompressRLElist(int[] nums) {
+        
+        int len = nums.length;
+        int f, v;
+        List<Integer> list = new ArrayList();
+        
+        
+        for(int i = 0; i < len; i = i+2){
+            int pos = i+1;
+            f = nums[i];
+            v = nums[pos];
+            for(int j = 0; j < f; j++){
+                list.add(v);
+            }
+        }
+        
+        int s = list.size();
+        int []a = new int[s];
+        
+        for(int i = 0; i < s; i++){
+            a[i] = list.get(i);
+        }
+        
+        return a;
+        
+        
+        
+    }
+}
