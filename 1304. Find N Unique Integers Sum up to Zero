@@ -1,0 +1,38 @@
+class Solution {
+    public int[] sumZero(int n) {
+        int a[] = new int[n];
+        if(n == 1) return a;
+        
+        if(n%2 == 0){
+            
+            int val = -1;
+            
+            for(int i = 1; i <= n/2; i++){
+                a[i-1] = i;
+            }
+            for(int j = n/2; j < n; j++){
+                a[j] = val;
+                val--;
+            }
+            
+            return a;
+            
+        } else {
+            a[0] = 0;
+            
+            int val = -1;
+            
+            for(int i = 1; i <= n/2; i++){
+                a[i] = i;
+            }
+            for(int j = n/2+1; j < n; j++){
+                a[j] = val;
+                val--;
+            }
+            
+            return a;
+            
+        }
+
+    }
+}
